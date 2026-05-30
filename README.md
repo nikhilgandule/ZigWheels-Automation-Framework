@@ -1,67 +1,113 @@
-# ZigWheels Automation Framework
+# 🚗 ZigWheels Automation Framework (BDD)
 
-This project is an End-to-End Automation Testing Framework built for the ZigWheels website using Selenium WebDriver, TestNG, and Page Object Model (POM).
+This project is an End-to-End Automation Testing Framework built for the ZigWheels website using **Selenium WebDriver, Cucumber (BDD), TestNG, and Page Object Model (POM)**.
 
 ---
 
-## Tools & Technologies Used
+## 🛠 Tools & Technologies Used
 
 - Java
 - Selenium WebDriver
-- TestNG
+- Cucumber (BDD)
+- TestNG (Runner Execution)
 - Page Object Model (POM)
-- Apache Commons IO (for screenshots)
+- Apache Commons IO (Screenshot Utility)
 
 ---
 
-## Features Covered
+## ✅ Features Covered
 
-✔ Electric Cars Module  
-✔ Upcoming Bikes Filtering  
-✔ User Reviews Extraction & Sorting  
-✔ Bike Dealers Search (City + Brand)  
-✔ Browse by Brand (BMW → Cruiser Bikes)  
-✔ Car Filters (Seating, Engine, Price)  
-✔ Used Cars Listing  
 ✔ Google Login Validation  
+✔ Upcoming Honda Bikes Filtering  
+✔ Electric Cars Details Extraction  
+✔ User Reviews Extraction & Sorting  
+✔ Browse by Brand (BMW → Cruiser Bikes)  
+✔ Car Filters (Seating Capacity, Engine, Price)  
+✔ Electric Bikes Search  
 ✔ Screenshot Capture Utility  
 
 ---
 
-## Project Structure
+## 🧱 Framework Architecture
+
+Feature Files (.feature)
+↓
+Step Definitions
+↓
+Page Object Classes (POM)
+↓
+WebDriver (BaseTest)
+↓
+Hooks (@Before / @After)
+↓
+Test Runner (Cucumber + TestNG)
+
+---
+
+## 📁 Project Structure
+
 
 src/
-├── base/         → WebDriver setup (BaseTest)
-├── pages/        → Page classes (POM design)
-├── tests/        → TestNG test classes
-├── utils/        → Utility classes (Screenshot)
+├── main/java
+│   ├── base/              → WebDriver setup (BaseTest)
+│   ├── pages/             → Page classes (POM design)
+│   └── utils/             → Utility classes (Screenshot)
+│
+├── test/java
+│   ├── stepdefinitions/   → Step Definition classes
+│   ├── hooks/             → Cucumber Hooks (Setup/Teardown)
+│   └── runner/            → Test Runner
+│
+├── test/resources
+│   └── features/          → Feature files (BDD Scenarios)
 
 ---
 
-## Key Highlights
+## 🔥 Key Highlights
 
-- Modular design using **Page Object Model**
-- Dynamic element handling
-- JavaScript handling for complex UI interactions
-- Screenshot capture for validations
-- Clean and maintainable code structure
+- ✅ BDD approach using Cucumber (Gherkin syntax)
+- ✅ Clean separation of test logic and implementation
+- ✅ Page Object Model for maintainability
+- ✅ Hooks for browser lifecycle management
+- ✅ Reusable step definitions
+- ✅ Screenshot capture for validation and debugging
+- ✅ Multiple scenarios execution
 
 ---
 
-## How to Run
+## ▶️ How to Run
 
-1. Clone repository
-2. Import project in Eclipse
+1. Clone the repository:
+
+git clone https://github.com/nikhilgandule/ZigWheels-Automation-Framework.git
+
+2. Import as **Maven project** in Eclipse/IDE
+
 3. Run:
-  ZigwheelsTest.java → Run as TestNG
 
-##  Sample Output
+TestRunner.java → Run as TestNG
+
+---
+
+## 📸 Sample Output
+
 
 ===== CAR DETAILS =====
-Name  : Rolls-Royce Cullinan
-Price : Rs 6.95 Crore
+Name  : Maruti Suzuki e Vitara
+Price : Rs 0.72/kilometer
+
+Screenshots will be saved in:
+
+/screenshots/
 
 ---
 
+## 🚀 Future Enhancements
 
+- Parallel Execution
+- Extent Reporting Integration
+- CI/CD (Jenkins)
+- Cross-Browser Execution via Grid
+- Data-driven testing with Scenario Outline
 
+---
