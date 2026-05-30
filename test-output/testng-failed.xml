@@ -5,9 +5,7 @@
     <classes>
       <class name="tests.ZigwheelsTest">
         <methods>
-          <include name="setUp"/>
-          <include name="testCarFilters"/>
-          <include name="exit"/>
+          <include name="testUpcomingHondaBikes"/>
         </methods>
       </class> <!-- tests.ZigwheelsTest -->
     </classes>

@@ -5,8 +5,9 @@
     <test name="Zigwheels Functional Test">
 
         <classes>
-            
+                  
             <class name="tests.ZigwheelsTest"/>
+        
         </classes>
 
     </test>

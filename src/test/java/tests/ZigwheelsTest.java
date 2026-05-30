@@ -58,7 +58,7 @@ public class ZigwheelsTest extends BaseTest {
         ScreenshotUtil.capture(driver, "Reviews");
     }
 
-    // ✅ 5. BROWSE BY BRAND
+    //  BROWSE BY BRAND
     @Test(priority = 5, enabled = true)
     public void testBrowseByBrand() throws Exception {
 
@@ -92,7 +92,7 @@ public class ZigwheelsTest extends BaseTest {
     }
 
     // ELECTRIC BIKES 
-    @Test(priority = 7 ,enabled = true)
+    @Test(priority = 7, enabled = true)
     public void testMorePage() {
 
         ElectricBikes electricPage = new ElectricBikes(driver);

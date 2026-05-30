@@ -15,13 +15,13 @@ public class CarFilterPage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	}
 
-
 	// Scroll to Browse Cars section
 	public void scrollToCarsSection() {
 
 		WebElement section = wait.until(
 				ExpectedConditions.presenceOfElementLocated(By.xpath("//h2[contains(text(),'Browse Cars By')]")));
-
+		
+															//aligns the element in the center of the screen
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", section);
 	
 	}

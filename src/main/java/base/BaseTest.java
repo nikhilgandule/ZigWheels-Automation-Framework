@@ -1,23 +1,19 @@
 package base;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    public static WebDriver driver;
 
     String browser = System.getProperty("browser", "chrome");
     String url = "https://www.zigwheels.com/";
 
-    @BeforeMethod
-    public void setUp() {
+    public void initialization() {
 
         switch (browser.toLowerCase()) {
             case "chrome":
@@ -38,8 +34,7 @@ public class BaseTest {
         driver.get(url);
     }
 
-    @AfterMethod
-    public void exit() {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }

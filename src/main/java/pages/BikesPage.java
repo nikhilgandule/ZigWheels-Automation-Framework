@@ -25,7 +25,7 @@ public class BikesPage {
 	    WebElement newBikes = wait.until(
 	        ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space()='NEW BIKES']")));
 
-	    // Scroll to element
+	    // scroll the webpage until a specific element comes into view.
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", newBikes);
 
 	    // Strong hover
@@ -35,11 +35,11 @@ public class BikesPage {
 	           .moveToElement(newBikes)
 	           .perform();
 
-	    // DIRECTLY wait for clickable Upcoming (no UL wait)
+	    // DIRECTLY wait for clickable Upcoming
 	    WebElement upcoming = wait.until(
 	        ExpectedConditions.elementToBeClickable(By.xpath("//a[@data-track-label='nav-upcoming-bikes']")));
 
-	    // Use JS click (best reliability)
+	    // Use JS click
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", upcoming);
 	}
 
@@ -53,10 +53,10 @@ public class BikesPage {
 	    // Locate Honda brand
 	    WebElement honda = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-track-label='filter-by-brand' and contains(text(),'Honda')]")));
 
-	    // Scroll into view (VERY IMPORTANT)
+	    // Scroll into view
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", honda);
 
-	    // Click using JS (most reliable)
+	    // Click using JS
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", honda);
 	}
 	
@@ -74,7 +74,7 @@ public class BikesPage {
 	            // Bike Name
 	            String bikeName = bike.findElement(By.xpath(".//strong")).getText();
 
-	            // Price (using attribute - BEST)
+	            // Price
 	            String priceValue = bike.getAttribute("data-price");
 
 	            double priceLakh = Double.parseDouble(priceValue) / 100000;
